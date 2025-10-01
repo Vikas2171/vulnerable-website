@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vulnerable Web App - SSRF</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>🚨 Vulnerable Web Application</h1>
+            <p class="warning">⚠️ FOR EDUCATIONAL PURPOSES ONLY ⚠️</p>
+        </div>
+    </header>
+    <nav>
+        <div class="container">
+            <a href="/protected/home.html">Home</a>
+            <a href="/protected/command-injection.html">Command Injection</a>
+            <a href="/protected/xss-get.html">XSS (GET)</a>
+            <a href="/protected/xss-post.html">XSS (POST)</a>
+            <a href="/protected/csrf-get.html">CSRF (GET)</a>
+            <a href="/protected/csrf-post.html">CSRF (POST)</a>
+            <a href="/protected/ssrf.html">SSRF</a>
+            <a href="/protected/sql-injection.html">SQL Injection</a>
+            <a id="logout" href="/logout">Logout</a>
+            <span class="account-balance">Balance: $__ACCOUNT_BALANCE__</span>
+        </div>
+    </nav>
+    <main>
+        <div class="container vulnerability-page">
+            <h2>Server-Side Request Forgery (SSRF)</h2>
+    
+            <div class="info-box">
+                <h3>What is SSRF?</h3>
+                <p>SSRF allows an attacker to make the server send requests to internal or external systems, bypassing access controls like firewalls.</p>
+                <h4>How to exploit:</h4>
+                 <ul>
+                    <li>Try an external service: <code>http://httpbin.org/ip</code></li>
+                    <li>Try to access the application server itself: <code>http://localhost:3000</code></li>
+                    <li>Try to access a local file: <code>file:///etc/passwd</code> (may not work on all systems)</li>
+                </ul>
+            </div>
+            
+            <div class="form-container">
+                <h3>URL Fetcher Tool</h3>
+                <form action="/ssrf-action" method="POST">
+                    <div class="form-group">
+                        <label for="url-input">Enter URL to fetch:</label>
+                        <input type="text" id="url-input" name="url" placeholder="http://example.com" required>
+                    </div>
+                    <button type="submit" class="btn">Fetch URL</button>
+                </form>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

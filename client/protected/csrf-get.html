@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vulnerable Web App - CSRF via GET</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>🚨 Vulnerable Web Application</h1>
+            <p class="warning">⚠️ FOR EDUCATIONAL PURPOSES ONLY ⚠️</p>
+        </div>
+    </header>
+    <nav>
+        <div class="container">
+            <a href="/protected/home.html">Home</a>
+            <a href="/protected/command-injection.html">Command Injection</a>
+            <a href="/protected/xss-get.html">XSS (GET)</a>
+            <a href="/protected/xss-post.html">XSS (POST)</a>
+            <a href="/protected/csrf-get.html">CSRF (GET)</a>
+            <a href="/protected/csrf-post.html">CSRF (POST)</a>
+            <a href="/protected/ssrf.html">SSRF</a>
+            <a href="/protected/sql-injection.html">SQL Injection</a>
+            <a id="logout" href="/logout">Logout</a>
+            <span class="account-balance">Balance: $__ACCOUNT_BALANCE__</span>
+        </div>
+    </nav>
+    <main>
+        <div class="container vulnerability-page">
+            <h2>Cross-Site Request Forgery (CSRF) via GET</h2>
+    
+            <div class="info-box">
+                <h3>What is CSRF via GET?</h3>
+                <p>A state-changing action (like a transfer) is performed via a GET request. An attacker can craft a malicious URL that, when visited by a logged-in user, will execute the action without their consent.</p>
+                <h4>How to exploit:</h4>
+                <ul>
+                    <li>Create a malicious link on an external website:</li>
+                    <li><code>&lt;img src="http://localhost:3000/csrf-get-action?amount=1000&recipient=attacker@evil.com"&gt;</code></li>
+                </ul>
+            </div>
+            
+            <div class="form-container">
+                <h3>Bank Transfer (GET method)</h3>
+                <form action="/csrf-get-action" method="GET">
+                    <div class="form-group">
+                        <label for="amount">Amount ($):</label>
+                        <input type="number" id="amount" name="amount" placeholder="100" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="recipient">Recipient Email:</label>
+                        <input type="email" id="recipient" name="recipient" placeholder="recipient@example.com" required>
+                    </div>
+                    <button type="submit" class="btn">Transfer Money</button>
+                </form>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

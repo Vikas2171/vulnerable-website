@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vulnerable Web App - Security Training</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>🚨 Vulnerable Web Application</h1>
+            <p class="warning">⚠️ FOR EDUCATIONAL PURPOSES ONLY ⚠️</p>
+        </div>
+    </header>
+    
+    <nav>
+        <div class="container">
+            <a href="/protected/home.html">Home</a>
+            <a href="/protected/command-injection.html">Command Injection</a>
+            <a href="/protected/xss-get.html">XSS (GET)</a>
+            <a href="/protected/xss-post.html">XSS (POST)</a>
+            <a href="/protected/csrf-get.html">CSRF (GET)</a>
+            <a href="/protected/csrf-post.html">CSRF (POST)</a>
+            <a href="/protected/ssrf.html">SSRF</a>
+            <a href="/protected/sql-injection.html">SQL Injection</a>
+            <a id="logout" href="/logout">Logout</a>
+            <span class="account-balance">Balance: $__ACCOUNT_BALANCE__</span>
+        </div>
+    </nav>
+    
+    <main>
+        <div class="container">
+            <div class="hero">
+                <h2>Security Vulnerability Training Platform</h2>
+                <p class="lead">This application contains deliberately implemented security vulnerabilities for educational and training purposes.</p>
+            </div>
+
+            <div class="warning-box">
+                <h3>⚠️ IMPORTANT LEGAL DISCLAIMER</h3>
+                <ul>
+                    <li>This application is designed EXCLUSIVELY for educational purposes</li>
+                    <li>DO NOT deploy this application on public servers or production environments</li>
+                    <li>Use only in controlled, isolated environments for security training</li>
+                    <li>Users are responsible for ensuring ethical and legal use</li>
+                    <li>The creators assume no liability for misuse of this application</li>
+                </ul>
+            </div>
+
+            <div class="vulnerabilities-grid">
+                <div class="vulnerability-card">
+                    <h3>OS Command Injection</h3>
+                    <p>Execute system commands through unsanitized input</p>
+                    <a href="/protected/command-injection.html" class="btn">Explore</a>
+                </div>
+                 <div class="vulnerability-card">
+                    <h3>XSS via GET</h3>
+                    <p>Cross-Site Scripting through URL parameters</p>
+                    <a href="/protected/xss-get.html" class="btn">Explore</a>
+                </div>
+                 <div class="vulnerability-card">
+                    <h3>XSS via POST</h3>
+                    <p>Cross-Site Scripting through form submissions</p>
+                    <a href="/protected/xss-post.html" class="btn">Explore</a>
+                </div>
+                <div class="vulnerability-card">
+                    <h3>CSRF via GET</h3>
+                    <p>Cross-Site Request Forgery using GET requests</p>
+                    <a href="/protected/csrf-get.html" class="btn">Explore</a>
+                </div>
+                <div class="vulnerability-card">
+                    <h3>CSRF via POST</h3>
+                    <p>Cross-Site Request Forgery using POST requests</p>
+                    <a href="/protected/csrf-post.html" class="btn">Explore</a>
+                </div>
+                 <div class="vulnerability-card">
+                    <h3>Server-Side Request Forgery</h3>
+                    <p>Make requests to internal/external systems</p>
+                    <a href="/protected/ssrf.html" class="btn">Explore</a>
+                </div>
+                 <div class="vulnerability-card">
+                    <h3>SQL Injection</h3>
+                    <p>Manipulate database queries through input</p>
+                    <a href="/protected/sql-injection.html" class="btn">Explore</a>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Vulnerable Web App - Educational Use Only</p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vulnerable Web App - OS Command Injection</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>🚨 Vulnerable Web Application</h1>
+            <p class="warning">⚠️ FOR EDUCATIONAL PURPOSES ONLY ⚠️</p>
+        </div>
+    </header>
+    <nav>
+        <div class="container">
+            <a href="/protected/home.html">Home</a>
+            <a href="/protected/command-injection.html">Command Injection</a>
+            <a href="/protected/xss-get.html">XSS (GET)</a>
+            <a href="/protected/xss-post.html">XSS (POST)</a>
+            <a href="/protected/csrf-get.html">CSRF (GET)</a>
+            <a href="/protected/csrf-post.html">CSRF (POST)</a>
+            <a href="/protected/ssrf.html">SSRF</a>
+            <a href="/protected/sql-injection.html">SQL Injection</a>
+            <a id="logout" href="/logout">Logout</a>
+            <span class="account-balance">Balance: $__ACCOUNT_BALANCE__</span>
+        </div>
+    </nav>
+    <main>
+        <div class="container vulnerability-page">
+            <h2>OS Command Injection</h2>
+    
+            <div class="info-box">
+                <h3>What is OS Command Injection?</h3>
+                <p>OS Command Injection occurs when an application passes unsafe user input directly to system shell commands.</p>
+            </div>
+            
+            <div class="form-container">
+                <h3>Ping Tool</h3>
+                <form action="/command-injection-vulnerable" method="POST">
+                    <div class="form-group">
+                        <label for="host-input">Enter hostname or IP to ping:</label>
+                        <input type="text" id="host-input" name="host" placeholder="google.com">
+                    </div>
+                    <button type="submit" class="btn">Execute Ping</button>
+                </form>
+            </div>
+        </div>
+    </main>
+    
+    </body>
+</html>

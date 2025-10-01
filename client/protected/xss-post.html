@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vulnerable Web App - XSS via POST</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>🚨 Vulnerable Web Application</h1>
+            <p class="warning">⚠️ FOR EDUCATIONAL PURPOSES ONLY ⚠️</p>
+        </div>
+    </header>
+    <nav>
+        <div class="container">
+            <a href="/protected/home.html">Home</a>
+            <a href="/protected/command-injection.html">Command Injection</a>
+            <a href="/protected/xss-get.html">XSS (GET)</a>
+            <a href="/protected/xss-post.html">XSS (POST)</a>
+            <a href="/protected/csrf-get.html">CSRF (GET)</a>
+            <a href="/protected/csrf-post.html">CSRF (POST)</a>
+            <a href="/protected/ssrf.html">SSRF</a>
+            <a href="/protected/sql-injection.html">SQL Injection</a>
+            <a id="logout" href="/logout">Logout</a>
+            <span class="account-balance">Balance: $__ACCOUNT_BALANCE__</span>
+        </div>
+    </nav>
+    <main>
+        <div class="container vulnerability-page">
+            <h2>Reflected Cross-Site Scripting (XSS) via POST</h2>
+    
+            <div class="info-box">
+                <h3>What is Reflected XSS via POST?</h3>
+                <p>This vulnerability occurs when the server takes user input from a form submission and includes it in the response page without proper sanitization.</p>
+                 <h4>How to exploit:</h4>
+                <ul>
+                    <li>Try a normal comment: <code>This is great!</code></li>
+                    <li>Try a script injection: <code>&lt;script&gt;alert('XSS via POST')&lt;/script&gt;</code></li>
+                    <li>Try an image-based injection: <code>&lt;img src="x" onerror="alert('Hacked!')"&gt;</code></li>
+                </ul>
+            </div>
+            
+            <div class="form-container">
+                <h3>Comment System</h3>
+                <form action="/xss-post-vulnerable" method="POST">
+                    <div class="form-group">
+                        <label for="comment-input">Leave a comment:</label>
+                        <textarea id="comment-input" name="comment" placeholder="Enter your comment here..." rows="4"></textarea>
+                    </div>
+                    <button type="submit" class="btn">Post Comment</button>
+                </form>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

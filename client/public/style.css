@@ -1,0 +1,460 @@
+/* CSS Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f5f5f5;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header */
+header {
+    background: linear-gradient(135deg, #dc3545, #e74c3c);
+    color: white;
+    padding: 1rem 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+header h1 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+.warning {
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: bold;
+    background: rgba(255,255,255,0.2);
+    padding: 0.5rem;
+    border-radius: 5px;
+    margin-top: 0.5rem;
+}
+
+/* Navigation */
+nav {
+    background: #343a40;
+    padding: 1rem 0;
+}
+
+nav .container {
+    max-width: 1400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* flex-wrap: wrap; */
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    margin-right: 0.5rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+nav a:hover {
+    background-color: #495057;
+}
+
+nav .account-balance {
+    color: #ffc107;
+    padding: 0.5rem 1rem;
+    font-weight: bold;
+}
+
+/*logout button in red*/
+nav a#logout {
+    color: #ff0000;
+}
+/* Main Content */
+main {
+    flex: 1;
+    padding: 2rem 0;
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.hero h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #343a40;
+}
+
+.lead {
+    font-size: 1.2rem;
+    color: #6c757d;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Warning Box */
+.warning-box {
+    background: #fff3cd;
+    border: 2px solid #ffc107;
+    border-radius: 10px;
+    padding: 2rem;
+    margin-bottom: 3rem;
+}
+
+.warning-box h3 {
+    color: #856404;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.warning-box ul {
+    list-style-type: none;
+}
+
+.warning-box li {
+    padding: 0.5rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.warning-box li:before {
+    content: "⚠️";
+    position: absolute;
+    left: 0;
+}
+
+/* Vulnerabilities Grid */
+.vulnerabilities-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.vulnerability-card {
+    background: white;
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.vulnerability-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.vulnerability-card h3 {
+    color: #dc3545;
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+.vulnerability-card p {
+    color: #6c757d;
+    margin-bottom: 1.5rem;
+}
+
+/* Buttons */
+.btn {
+    background: #dc3545;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+    display: inline-block;
+}
+
+.btn:hover {
+    background: #c82333;
+    color: white;
+    text-decoration: none;
+}
+
+/* Vulnerability Pages */
+.vulnerability-page {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.vulnerability-page h2 {
+    color: #dc3545;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    text-align: center;
+}
+
+/* Info Box */
+.info-box {
+    background: #d1ecf1;
+    border: 1px solid #bee5eb;
+    border-radius: 10px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+}
+
+.info-box h3 {
+    color: #0c5460;
+    margin-bottom: 1rem;
+}
+
+.info-box h4 {
+    color: #0c5460;
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.info-box ul {
+    margin-left: 1rem;
+}
+
+.info-box li {
+    margin-bottom: 0.5rem;
+}
+
+.info-box code {
+    background: #f8f9fa;
+    padding: 0.2rem 0.4rem;
+    border-radius: 3px;
+    font-family: 'Courier New', monospace;
+    color: #e83e8c;
+}
+
+/* Form Container */
+.form-container {
+    background: white;
+    border-radius: 10px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.form-container h3 {
+    margin-bottom: 1.5rem;
+    color: #343a40;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: #343a40;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #dc3545;
+    box-shadow: 0 0 0 2px rgba(220, 53, 69, 0.2);
+}
+
+/* Result Boxes */
+.result-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    border-left: 5px solid #6c757d;
+}
+
+.result-box.success {
+    background: #d4edda;
+    border-left-color: #28a745;
+}
+
+.result-box.error {
+    background: #f8d7da;
+    border-left-color: #dc3545;
+}
+
+.result-box h3 {
+    margin-bottom: 1rem;
+    color: #343a40;
+}
+
+.result-box pre {
+    background: #343a40;
+    color: #f8f9fa;
+    padding: 1rem;
+    border-radius: 5px;
+    overflow-x: auto;
+    font-family: 'Courier New', monospace;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+.vulnerable-output {
+    background: #fff3cd;
+    border: 2px solid #ffc107;
+    padding: 1rem;
+    border-radius: 5px;
+    margin: 1rem 0;
+    min-height: 50px;
+}
+
+.comment-display {
+    border: 2px dashed #dc3545;
+    background: #f8f9fa;
+    padding: 1rem;
+    margin: 1rem 0;
+    min-height: 60px;
+}
+
+/* Transfer Details */
+.transfer-details {
+    background: white;
+    border-radius: 5px;
+    padding: 1rem;
+    margin-top: 1rem;
+}
+
+.transfer-details p {
+    margin-bottom: 0.5rem;
+}
+
+/* Query Box */
+.query-box {
+    background: #343a40;
+    color: white;
+    border-radius: 10px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+}
+
+.query-box h3 {
+    color: #ffc107;
+    margin-bottom: 1rem;
+}
+
+.query-box pre {
+    background: #495057;
+    padding: 1rem;
+    border-radius: 5px;
+    overflow-x: auto;
+    color: #f8f9fa;
+}
+
+/* Exploit Examples */
+.exploit-example {
+    background: #2c3e50;
+    color: white;
+    border-radius: 10px;
+    padding: 2rem;
+    margin-top: 2rem;
+}
+
+.exploit-example h3 {
+    color: #e74c3c;
+    margin-bottom: 1rem;
+}
+
+.exploit-example pre {
+    background: #34495e;
+    padding: 1rem;
+    border-radius: 5px;
+    overflow-x: auto;
+    color: #ecf0f1;
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+.exploit-example ul {
+    margin-left: 1rem;
+}
+
+.exploit-example li {
+    margin-bottom: 0.5rem;
+}
+
+.exploit-example code {
+    background: #34495e;
+    padding: 0.2rem 0.4rem;
+    border-radius: 3px;
+    color: #e74c3c;
+}
+
+/* Footer */
+footer {
+    background: #343a40;
+    color: white;
+    text-align: center;
+    padding: 2rem 0;
+    margin-top: auto;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 15px;
+    }
+    
+    .hero h2 {
+        font-size: 2rem;
+    }
+    
+    .vulnerabilities-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    nav a {
+        display: block;
+        margin-bottom: 0.5rem;
+        text-align: center;
+    }
+    
+    .form-container,
+    .result-box,
+    .info-box,
+    .exploit-example {
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.5rem;
+    }
+    
+    .vulnerability-page h2 {
+        font-size: 1.5rem;
+    }
+    
+    .btn {
+        width: 100%;
+        text-align: center;
+    }
+}

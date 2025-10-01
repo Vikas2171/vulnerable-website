@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vulnerable Web App - XSS via GET</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>🚨 Vulnerable Web Application</h1>
+            <p class="warning">⚠️ FOR EDUCATIONAL PURPOSES ONLY ⚠️</p>
+        </div>
+    </header>
+    <nav>
+        <div class="container">
+            <a href="/protected/home.html">Home</a>
+            <a href="/protected/command-injection.html">Command Injection</a>
+            <a href="/protected/xss-get.html">XSS (GET)</a>
+            <a href="/protected/xss-post.html">XSS (POST)</a>
+            <a href="/protected/csrf-get.html">CSRF (GET)</a>
+            <a href="/protected/csrf-post.html">CSRF (POST)</a>
+            <a href="/protected/ssrf.html">SSRF</a>
+            <a href="/protected/sql-injection.html">SQL Injection</a>
+            <a id="logout" href="/logout">Logout</a>
+            <span class="account-balance">Balance: $__ACCOUNT_BALANCE__</span>
+        </div>
+    </nav>
+    <main>
+        <div class="container vulnerability-page">
+            <h2>Reflected Cross-Site Scripting (XSS) via GET</h2>
+    
+            <div class="info-box">
+                <h3>What is Reflected XSS?</h3>
+                <p>The server reads data from the URL and includes it in the response page without sanitization. The payload is visible in the address bar.</p>
+                <h4>How to exploit:</h4>
+                <ul>
+                    <li>Craft a URL with a script payload.</li>
+                    <li>Example: <code>/xss-get-vulnerable?search=&lt;script&gt;alert('XSS')&lt;/script&gt;</code></li>
+                </ul>
+            </div>
+            
+            <div class="form-container">
+                <h3>Search Feature</h3>
+                <form method="GET" action="/xss-get-vulnerable">
+                    <div class="form-group">
+                        <label for="search-input">Search query:</label>
+                        <input type="text" id="search-input" name="search" placeholder="Enter search term">
+                    </div>
+                    <button type="submit" class="btn">Search</button>
+                </form>
+            </div>
+        </div>
+    </main>
+    
+    </body>
+</html>
