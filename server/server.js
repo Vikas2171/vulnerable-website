@@ -55,7 +55,7 @@ app.post('/login', (req, res) => {
                 req.session.balance = 1000;
                 res.redirect('/protected/home.html');
             } else {
-                res.send('Incorrect Username and/or Password!');
+                res.redirect('/login-fail.html');
             }
         });
     } else {
