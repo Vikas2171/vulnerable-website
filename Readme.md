@@ -7,6 +7,13 @@ This is a deliberately insecure web application designed for security training, 
 **DO NOT deploy this application on public servers or in production environments.** The creators assume no liability for any misuse of this application.
 
 -----
+<!-- //screenshots -->
+## Screenshots
+![Home](https://github.com/Vikas2171/vulnerable-website/blob/main/images/Home.png)
+
+![Home2](https://github.com/Vikas2171/vulnerable-website/blob/main/images/Home2.png)
+
+-----
 
 ## ✨ Features
 
